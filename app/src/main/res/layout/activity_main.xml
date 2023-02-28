@@ -4,13 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    android:background="@drawable/kotlin"
     android:gravity="center"
-    >
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:context=".MainActivity">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Quiz App"
         android:gravity="center"
+        android:text="Quiz App"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
         />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </androidx.cardview.widget.CardView>
 </LinearLayout>
