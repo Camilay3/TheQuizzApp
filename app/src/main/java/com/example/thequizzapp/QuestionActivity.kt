@@ -8,5 +8,11 @@ class QuestionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question)
         setData.getQuestion()
+
+
+        var demo = setData.getQuestion()
+        /* NÃO DEU CERTO
+        Log.e("meu teste", "${demo.size}")
+        */
     }
 }
