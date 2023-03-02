@@ -10,6 +10,7 @@
     tools:context=".QuestionActivity">
 
     <TextView
+        android:id="@+id/question_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -46,6 +47,7 @@
             style="?android:attr/progressBarStyleHorizontal"/>
 
         <TextView
+            android:id="@+id/progress_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="1/5"
@@ -57,6 +59,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/opt_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="opção1"
@@ -66,6 +69,7 @@
         android:layout_marginTop="20dp"
         android:gravity="center"/>
     <TextView
+        android:id="@+id/opt_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="opção2"
@@ -75,6 +79,7 @@
         android:layout_marginTop="20dp"
         android:gravity="center"/>
     <TextView
+        android:id="@+id/opt_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="opção3"
@@ -84,6 +89,7 @@
         android:layout_marginTop="20dp"
         android:gravity="center"/>
     <TextView
+        android:id="@+id/opt_4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="opção4"
@@ -94,6 +100,7 @@
         android:gravity="center"/>
 
         <Button
+            android:id="@+id/submit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
