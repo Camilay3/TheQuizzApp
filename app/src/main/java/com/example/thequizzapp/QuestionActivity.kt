@@ -48,11 +48,34 @@ class QuestionActivity : AppCompatActivity() {
                 val question=questionList!![currentPosition-1]
                 if(selectedOption!=question.correct_ans)
                 {
-
+                   setColor(selectedOption,R.drawable.wrong_question_option)
                 }
+                setColor(question.correct_ans,R.drawable.correct_question_option)
+                if(currentPosition==questionList!!.size)
+                submit.text="TERMINAR"
+                else
+                    submit.text= "Próximo"
             }
         }
 
+    }
+
+    fun setColor(opt:Int,color:Int){
+        when(opt){
+            1->{
+               opt_1.background=ContextCompat.getDrawable(this,color)
+            }
+            2->{
+                opt_2.background=ContextCompat.getDrawable(this,color)
+            }
+            3->{
+                opt_3.background=ContextCompat.getDrawable(this,color)
+            }
+            4->{
+                opt_4.background=ContextCompat.getDrawable(this,color)
+            }
+
+        }
     }
 
     fun setQuestion(){
