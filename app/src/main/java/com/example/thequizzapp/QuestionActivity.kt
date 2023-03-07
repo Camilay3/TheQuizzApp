@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_question.*
 
@@ -55,7 +56,18 @@ class QuestionActivity : AppCompatActivity() {
                 submit.text="TERMINAR"
                 else
                     submit.text= "Próximo"
+            }else{
+                currentPosition++
+                when{
+                    currentPosition<=questionList!!.size->{
+                        setQuestion()
+                    }
+                    else->{
+                        Toast.makeText(this,"Hello",Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
+            selectedOption=0
         }
 
     }
@@ -82,6 +94,7 @@ class QuestionActivity : AppCompatActivity() {
 
         val question = questionList!![currentPosition-1]
         setOptionStyle()
+        
 
         progress_horizontal.progress=currentPosition
         progress_horizontal.max=questionList!!.size
