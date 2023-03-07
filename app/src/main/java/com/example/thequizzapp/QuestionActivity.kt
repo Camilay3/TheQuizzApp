@@ -1,8 +1,11 @@
 package com.example.thequizzapp
 
+import android.graphics.Color
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_question.*
 
@@ -22,18 +25,44 @@ class QuestionActivity : AppCompatActivity() {
 
         setQuestion()
 
+        opt_1.setOnClickListener{
 
+            selectedOptionStyle(opt_1,1)
+        }
+        opt_2.setOnClickListener{
 
+            selectedOptionStyle(opt_2,2)
+        }
+        opt_3.setOnClickListener{
+
+            selectedOptionStyle(opt_3,3)
+        }
+        opt_4.setOnClickListener{
+
+            selectedOptionStyle(opt_4,4)
+        }
+
+        submit.setOnClickListener {
+            if(selectedOption!=0)
+            {
+                val question=questionList!![currentPosition-1]
+                if(selectedOption!=question.correct_ans)
+                {
+
+                }
+            }
+        }
 
     }
 
     fun setQuestion(){
 
         val question = questionList!![currentPosition-1]
+        setOptionStyle()
 
         progress_horizontal.progress=currentPosition
         progress_horizontal.max=questionList!!.size
-        progress_text="${currentPosition}"+"/"+"${questionList!!.size}"
+        progress_text.text="${currentPosition}"+"/"+"${questionList!!.size}"
         question_text.text=question.question
         opt_1.text=question.option_one
         opt_2.text=question.option_two
@@ -51,7 +80,17 @@ class QuestionActivity : AppCompatActivity() {
         for(op in optionList)
         {
             op.setTextColor(Color.parseColor("#555151"))
-            op.background=ContextCompat.getDrawable(R.drawable.question_option)
+            op.background=ContextCompat.getDrawable(this,R.drawable.question_option)
+            op.typeface= Typeface.DEFAULT
         }
+    }
+
+    fun selectedOptionStyle(view:TextView, opt:Int){
+
+        setOptionStyle()
+        selectedOption=opt
+        view.background=ContextCompat.getDrawable(this,R.drawable.selected_question_option)
+        view.typeface= Typeface.DEFAULT_BOLD
+        view.setTextColor(Color.parseColor("#000000"))
     }
 }
