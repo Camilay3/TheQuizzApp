@@ -17,6 +17,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/black"
+        android:background="@color/white"
         android:text="Insira sua pergunta"/>
 
     <LinearLayout
