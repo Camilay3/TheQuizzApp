@@ -13,10 +13,21 @@ class Result : AppCompatActivity() {
         window.decorView.systemUiVisibility= View.SYSTEM_UI_FLAG_FULLSCREEN
         val userName=intent.getStringExtra(setData.name)
         val score=intent.getStringExtra(setData.score)
-        val totalQuestion=intent.getStringExtra("total size")
+        /*val totalQuestion=intent.getStringExtra("tamanho total")*/
+        val totalQuestion = setData.que
 
-        congo.text="Parabéns ${userName} !!"
-        Score.text="${score} / ${totalQuestion}"
+        /*congo.text="Parabéns ${userName} !!"*/
+
+        if (score!!.toInt() == 0) {
+            congo.text="Que pena, ${userName}"
+        } else if (score!!.toInt() < 3) {
+            congo.text="Pode melhorar, ${userName}"
+        } else {
+            congo.text="Parabéns, ${userName}!"
+        }
+
+        /*Score.text="${score} / ${totalQuestion}"*/
+        Score.text="${score} / ${totalQuestion.size}"
         button.setOnClickListener {
             startActivity(Intent(this,MainActivity::class.java))
             finish()

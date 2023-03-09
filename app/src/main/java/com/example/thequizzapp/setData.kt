@@ -4,9 +4,9 @@ object setData {
 
     const val name:String="name"
     const val score:String="score"
+    var que:ArrayList<QuestionData> = arrayListOf()
 
     fun getQuestion():ArrayList<QuestionData> {
-        var que:ArrayList<QuestionData> = arrayListOf()
         var q1 = QuestionData(1, 2,"Qual animal foi escolhido para a nota de 20 reais?",
             "Tartaruga",
             "Mico-leão",
@@ -14,9 +14,9 @@ object setData {
             "Onça-pintada"
         )
         var q2 = QuestionData(2, 4,"Qual o resultado de: 8:(10:5)-4:(2).(2) ?",
-            "8",
-            "4",
+            "3",
             "2",
+            "1",
             "0"
         )
         var q3 = QuestionData(3, 3,"Se a irmã do marido da mãe de Ana é tia da sua mãe, o que você é de Ana?",
@@ -38,6 +38,7 @@ object setData {
             "Adjetivo"
         )
 
+        que.clear()
         que.add(q1)
         que.add(q2)
         que.add(q3)
