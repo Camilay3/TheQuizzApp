@@ -31,7 +31,7 @@ object setData {
             "Roma",
             "Chile"
         )
-        var q5 = QuestionData(5, 1,"Catraca, caneca, casaca, cômico e careca são exemplos de:",
+        var q5 = QuestionData(5, 1,"Osso, Ana, radar e roma são exemplos de:",
             "Palíndromo",
             "Substantivo composto",
             "Objeto",
