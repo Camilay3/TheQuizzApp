@@ -60,12 +60,13 @@ class QuestionActivity : AppCompatActivity() {
                     score++;
                 }
                 setColor(question.correct_ans,R.drawable.correct_question_option)
-                if(currentPosition==questionList!!.size)
+                currentPosition++
+                if(currentPosition==questionList!!.size+1)
                 submit.text="TERMINAR"
                 else
                     submit.text= "Próximo"
             }else{
-                currentPosition++
+
                 when{
                     currentPosition<=questionList!!.size->{
                         setQuestion()
