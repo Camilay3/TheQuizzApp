@@ -2,6 +2,9 @@ package com.example.thequizzapp
 
 object setData {
 
+    const val name:String="name"
+    const val score:String="score"
+
     fun getQuestion():ArrayList<QuestionData> {
         var que:ArrayList<QuestionData> = arrayListOf()
         var q1 = QuestionData(1, 2,"Qual animal foi escolhido para a nota de 20 reais?",

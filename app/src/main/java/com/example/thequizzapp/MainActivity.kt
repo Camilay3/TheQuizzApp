@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
-
 import kotlinx.android.synthetic.main.activity_main.*
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Insira seu nome", Toast.LENGTH_SHORT).show()
             } else {
                 var intent = Intent(this, QuestionActivity::class.java)
+                intent.putExtra("${setData.name}",input.text.toString())
                 startActivity(intent)
                 finish()
             }

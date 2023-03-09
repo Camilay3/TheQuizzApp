@@ -1,5 +1,6 @@
 package com.example.thequizzapp
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,9 @@ import kotlinx.android.synthetic.main.activity_question.*
 
 class QuestionActivity : AppCompatActivity() {
 
+    private var Name:String?=null
+    private var score:Int=0
+
     /*
     private var questionList:ArrayList<QuestionData>?=null
      */
@@ -21,6 +25,8 @@ class QuestionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question)
+
+        Name=intent.getStringExtra(setData.name);
 
         questionList=setData.getQuestion()
 
@@ -50,6 +56,8 @@ class QuestionActivity : AppCompatActivity() {
                 if(selectedOption!=question.correct_ans)
                 {
                    setColor(selectedOption,R.drawable.wrong_question_option)
+                }else{
+                    score++;
                 }
                 setColor(question.correct_ans,R.drawable.correct_question_option)
                 if(currentPosition==questionList!!.size)
@@ -63,7 +71,11 @@ class QuestionActivity : AppCompatActivity() {
                         setQuestion()
                     }
                     else->{
-                        Toast.makeText(this,"Hello",Toast.LENGTH_SHORT).show()
+                        var intent= Intent(this,Result::class.java)
+                        intent.putExtra(setData.name,Name.toString())
+                        intent.putExtra(setData.score,score.toString())
+                        intent.putExtra("toal size",questionList!!.size.toString())
+                         startActivity(intent)
                     }
                 }
             }
